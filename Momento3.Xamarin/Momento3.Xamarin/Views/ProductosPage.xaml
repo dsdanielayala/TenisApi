@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momento3.Xamarin.Views.ProductosPage"
+			 Title="Productos">
+	<ListView x:Name="listProducto" HasUnevenRows="True " ItemSelected="Producto_Selected">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<Grid Padding="0" Margin="0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition Width="3*" />
+						</Grid.ColumnDefinitions>
+
+						<Image Source="{Binding Imagen}" Grid.Column="0" Grid.Row="0" WidthRequest="80" HeightRequest="80" Margin="0"/>
+
+						<StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+							<Label Text="{Binding Nombre}" FontAttributes="Bold" />
+							<Label Text="{Binding Marca}" />
+							<Label Text="{Binding Descripcion}" />
+
+
+							<StackLayout Orientation="Horizontal">
+								<Label FontSize="14" Text="{Binding Precio}"
+									 HorizontalOptions="Start" TextColor="#289ee2" />
+								<Label Text="{Binding Descuento}" FontAttributes="Bold" />
+							</StackLayout>
+						</StackLayout>
+					</Grid>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

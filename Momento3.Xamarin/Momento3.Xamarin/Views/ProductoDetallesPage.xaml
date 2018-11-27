@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Momento3.Xamarin.Views.ProductoDetallesPage">
+	<StackLayout Orientation="Vertical">
+		<StackLayout Orientation="Horizontal">
+			<Label Text="Tituto: "/>
+			<Label Text="{Binding Nombre}"/>
+		</StackLayout>
+		<StackLayout Orientation="Horizontal">
+			<Label Text="Fecha: "/>
+			<Label Text="{Binding Marca}"/>
+		</StackLayout>
+		<StackLayout Orientation="Horizontal">
+			<Label Text="Cantidad Boletas: "/>
+			<Entry x:Name="CantidadBoletas" Keyboard="Numeric" />
+		</StackLayout>
+		<ListView ItemsSource="{Binding Talla}" ItemSelected="detalle_Selected">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Vertical">
+							<StackLayout Orientation="Horizontal">
+								<Label Text="{Binding Tallas}" />
+								<Label Text=" - " />
+								<Label Text="{Binding Color}" />
+								<Label Text=" - " />
+								<Label Text="{Binding Tipo}" />
+							</StackLayout>
+							<Label Text="{Binding Sexo}" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>
